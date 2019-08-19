@@ -1,0 +1,77 @@
+@import "./core/variables.less";
+
+.hero {
+    background-color: black;
+    border-top: @red-line-height solid @color-red-100;
+    width: 100%;
+
+    &__image {
+        animation: fadein 5s;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 1) 0%, rgba(255, 255, 255, 0) 49%, rgba(0, 0, 0, 1) 100%), url('/assets/img/scoreboard-kometa-hradec.jpg');
+        background-position: center center;
+        background-size: cover;
+        height: @hero-height;
+        margin: 0 auto;
+        width: 100%;
+        margin: 0 -10px;
+    }
+
+    &__headline {
+        bottom: 32px;
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 1.4;
+        margin: 0;
+        padding: 2px 0;
+        position: absolute;
+        z-index: 33;
+
+        &-row {
+            background-color: @color-blue-300;
+            box-decoration-break: clone;
+            color: #fff;
+            display: inline;
+            padding: 16px 12px;
+
+            &:nth-of-type(2) {
+                display: table;
+                font-size: @font-size-h4;
+            }
+        }
+    }
+
+    @media only screen and (min-width: @screen-xs-min) {
+        &__headline {
+            font-size: 30px;
+        }
+    }
+
+    @media only screen and (min-width: @screen-md-min) {
+        &__image {
+            background-position: center right;
+            width: 740px;
+        }
+
+        &__headline {
+            bottom: -55px;
+            font-size: 40px;
+            right: 200px;
+
+            &-row {
+                padding: 16px;
+            }
+        }
+    }
+    // Iphone X landscape
+    @media screen and (min-width: @screen-xs-min) and (max-height: 375px) {
+        &__image {
+            height: 375px;
+        }
+    }
+    // Iphone SE landscape
+    @media screen and (min-width: @screen-xxs-min) and (max-height: 320px) {
+        &__image {
+            height: 320px;
+        }
+    }
+}

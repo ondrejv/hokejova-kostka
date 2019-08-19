@@ -1,0 +1,35 @@
+@import "./core/variables.less";
+
+.benefits {
+    animation: fadein 6s;
+    margin-bottom: @indent-100;
+    margin-top: 32px;
+}
+
+.benefit {
+    font-size: @paragraph-mobile-font-size;
+    line-height: @paragraph-mobile-line-height;
+
+    &__list {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        padding-left: 30px;
+    }
+
+    & + & {
+        margin-top: 16px;
+    }
+
+    &__text {
+        display: block;
+    }
+
+    @media only screen and (min-width: @screen-sm-min) {
+        font-size: @lead-paragraph-font-size;
+    }
+}

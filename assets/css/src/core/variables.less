@@ -1,0 +1,110 @@
+@color-white:    #ffffff;
+@color-gray-100: #cccccc;
+@color-gray-600: #484848;
+@color-blue-100: #CCDFF0; // light blue bg
+@color-blue-200: #367FC4; // dark blue bg
+@color-blue-300: #30649D; // text dark blue bg
+@color-red-100:  #DC0203; // red line
+@color-red-200: #950303; // button bottom border and hover
+@color-pitch-black: #020202; // main black
+
+@type-color-base: @color-gray-600;
+@type-color-light: @color-white;
+
+// transparent colors
+@color-tr-blue-200: rgba(54, 127, 196, .8);
+//
+// Variables
+// --------------------------------------------------
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change, adapting to different screen sizes.
+// Iphone SE portrait
+@screen-xxs-min: 320px;
+// Iphone SE landscape
+@screen-xs-min: 569px;
+// Iphone 6 landscape
+@screen-sm-min: 668px;
+// Medium screen / desktop [iPad landscape]
+@screen-md-min: 1024px;
+// Large screen / wide desktop
+@screen-lg-min: 1200px;
+// So media queries don't overlap when required, provide a maximum
+@screen-xxs-max: (@screen-xs-min - 1);
+@screen-xs-max: (@screen-sm-min - 1);
+@screen-sm-max: (@screen-md-min - 1);
+@screen-md-max: (@screen-lg-min - 1);
+//== Grid system
+//
+//## Define your custom responsive grid.
+// Number of columns in the grid.
+@grid-columns: 24;
+// Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width-xs: 20px;
+@grid-gutter-width-sm: 20px;
+@grid-gutter-width-md: 20px;
+@grid-gutter-width: 20px;
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+// For `@screen-sm-min` and up.
+@container-sm: 758px;
+// For `@screen-md-min` and up.
+@container-md: 950px;
+// For `@screen-lg-min` and up.
+@container-lg: 1180px;
+// Font family
+@font-family: 'Roboto', sans-serif;
+// Font sizes DESKTOP
+@font-size-base: 21px;
+@font-size-h1: 42px;
+@font-size-h2: 28px;
+@font-size-h3: 21px;
+@font-size-h4: 18px;
+@paragraph-font-size: @font-size-base;
+@lead-paragraph-font-size: 21px;
+
+@font-line-height-base: 1.5;
+@font-line-height-h1: 1.1;
+@font-line-height-h2: 1.2;
+@font-line-height-h3: 1.3;
+@font-line-height-h4: 1.4;
+@paragraph-line-height: @font-line-height-base;
+@lead-paragraph-line-height: 1.4;
+
+@font-size-tabs: 14px;
+@font-size-tabs-mobile: @font-size-tabs;
+@font-size-footer: 16px;
+// Font sizes MOBILE
+@font-size-mobile-base: 16px;
+@font-size-mobile-h1: 39px;
+@font-size-mobile-h2: 26px;
+@font-size-mobile-h3: 18px;
+@font-size-mobile-h4: 16px;
+@paragraph-mobile-font-size: @font-size-mobile-base;
+@lead-paragraph-mobile-font-size: 20px;
+
+@font-line-height-mobile-base: 1.4;
+@font-line-height-mobile-h1: 1;
+@font-line-height-mobile-h2: 1.1;
+@font-line-height-mobile-h3: 1.2;
+@font-line-height-mobile-h4: 1.3;
+@paragraph-mobile-line-height: 1.4;
+@lead-paragraph-mobile-line-height: 1.3;
+// Type
+@h3-margin-top: 16px;
+@paragraph-max-width: 650px;
+@lead-paragraph-max-width: 700px;
+@lead-paragraph-margin-top: 28px;
+@lead-paragraph-font-weight: 400;
+// Header
+@header-height: 74px;
+@header-height--mobile: 54px;
+
+// Hero
+@hero-height: 440px;
+@hero-height-landscape-IX: 375px;
+@red-line-height: 8px;
+
+// Indents
+@indent-100: 100px;

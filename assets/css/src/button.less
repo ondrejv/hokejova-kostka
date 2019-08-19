@@ -1,0 +1,53 @@
+@import "./core/variables.less";
+
+.btn {
+    background: @color-gray-100;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 6px @color-red-200;
+    color: @color-white;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-top: 16px;
+    outline: none;
+    padding: 16px 32px;
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: none;
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+
+    &--primary {
+        background: @color-red-100;
+
+        &:hover {
+            box-shadow: 0 4px @color-red-200;
+            top: 2px;
+        }
+
+        &:active {
+            box-shadow: 0 0 @color-red-200;
+            top: 6px;
+        }
+    }
+
+    &--ghost-blue {
+        background-color: transparent;
+        border: 2px solid @color-blue-300;
+        box-shadow: none;
+        color: @color-blue-300;
+        transition: 0.3s all ease-in-out;
+
+        &:hover {
+            box-shadow: -17px 0px 40px @color-white;
+            top: 1px;
+        }
+    }
+
+    @media only screen and (min-width: @screen-md-min) {
+        padding: 16px 80px;
+    }
+}

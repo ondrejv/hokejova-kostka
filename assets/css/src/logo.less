@@ -1,0 +1,32 @@
+@import "./core/variables.less";
+
+.logos {
+    animation: fadein 6s;
+    margin-left: auto;
+    width: 100%;
+
+    @media only screen and (min-width: @screen-sm-min) {
+        width: 80%;
+    }
+}
+
+.logo {
+    text-align: center;
+
+    svg {
+        max-width: 100%;
+    }
+
+    &--team {
+        float: left;
+        margin-bottom: 48px;
+        margin-top: 48px;
+        width: 100%;
+    }
+
+    &--creator {
+        float: left;
+        margin-top: 36px;
+        width: 50%;
+    }
+}

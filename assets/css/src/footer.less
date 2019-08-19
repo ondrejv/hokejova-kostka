@@ -1,0 +1,23 @@
+@import "./core/variables.less";
+
+.footer {
+    background-color: @color-gray-600;
+    padding: 32px 0;
+
+    &__content {
+        align-content: space-between;
+        display: flex;
+    }
+
+    &__copyright {
+        width: 100%;
+        margin-top: 16px;
+    }
+
+    @media only screen and (min-width: @screen-sm-min) {
+        &__copyright {
+            margin-top: 0;
+            text-align: right;
+        }
+    }
+}

@@ -1,0 +1,157 @@
+//
+// Flex Grid system
+// --------------------------------------------------
+
+// Row
+.flex-row {
+    .make-flex-row();
+
+    &--vertical-center {
+        align-items: center;
+    }
+}
+
+// Create default style for ALL columns
+.make-flex-grid-columns();
+
+
+// Extra extra small grid
+//
+// Columns for extra small devices like smartphones.
+
+.make-flex-grid(xxs);
+.make-flex-grid-columns(xxs);
+
+
+// Extra small grid
+//
+// Columns for extra small devices like smartphones.
+
+@media (min-width: @screen-xs-min) {
+    .make-flex-grid(xs);
+    .make-flex-grid-columns(xs);
+}
+
+// Small grid
+//
+// Columns for the small device range, from phones to tablets.
+
+@media (min-width: @screen-sm-min) {
+    .make-flex-grid(sm);
+    .make-flex-grid-columns(sm);
+}
+
+
+// Medium grid
+//
+// Columns for the desktop device range.
+
+@media (min-width: @screen-md-min) {
+    .make-flex-grid(md);
+    .make-flex-grid-columns(md);
+}
+
+
+// Large grid
+//
+// Columns for the large desktop device range.
+
+@media (min-width: @screen-lg-min) {
+    .make-flex-grid(lg);
+    .make-flex-grid-columns(lg);
+}
+
+// Styles for the large desktop device range.
+@media (max-width: @screen-lg-min) {
+    .flex-col-lg-first {
+        order: 0;
+    }
+
+    .flex-col-lg-second {
+        order: 1;
+    }
+
+    .flex-col-lg-third {
+        order: 2;
+    }
+
+    .flex-col-lg-fourth {
+        order: 3;
+    }
+}
+
+// Styles for the desktop device range.
+@media (max-width: @screen-md-min) {
+    .flex-col-md-first {
+        order: 0;
+    }
+
+    .flex-col-md-second {
+        order: 1;
+    }
+
+    .flex-col-md-third {
+        order: 2;
+    }
+
+    .flex-col-md-fourth {
+        order: 3;
+    }
+}
+
+// Styles for the small device range, from phones to tablets.
+@media (max-width: @screen-sm-min) {
+    .flex-col-sm-first {
+        order: 0;
+    }
+
+    .flex-col-sm-second {
+        order: 1;
+    }
+
+    .flex-col-sm-third {
+        order: 2;
+    }
+
+    .flex-col-sm-fourth {
+        order: 3;
+    }
+}
+
+// Styles for extra small devices like smartphones.
+@media (max-width: @screen-xs-min) {
+    .flex-col-xs-first {
+        order: 0;
+    }
+
+    .flex-col-xs-second {
+        order: 1;
+    }
+
+    .flex-col-xs-third {
+        order: 2;
+    }
+
+    .flex-col-xs-fourth {
+        order: 3;
+    }
+}
+
+// Styles for extra small devices like smartphones.
+@media (max-width: @screen-xxs-min) {
+    .flex-col-xxs-first {
+        order: 0;
+    }
+
+    .flex-col-xxs-second {
+        order: 1;
+    }
+
+    .flex-col-xxs-third {
+        order: 2;
+    }
+
+    .flex-col-xxs-fourth {
+        order: 3;
+    }
+}

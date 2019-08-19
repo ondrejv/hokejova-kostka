@@ -1,0 +1,90 @@
+@import "./core/variables.less";
+
+@right-slanted-offset-landscape-IX: @hero-height-landscape-IX + @red-line-height;
+@right-slanted-offset: @hero-height + @red-line-height;
+
+.col {
+    &--blue-light {
+        background-color: @color-blue-100;
+        color: @type-color-base;
+    }
+
+    &--blue-dark {
+        background-color: @color-blue-200;
+        color: @type-color-light;
+        position: relative;
+    }
+
+    &--blue-right-slanted {
+        align-items: flex-end;
+        background: @color-blue-100;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        margin-right: 0;
+        right: 0;
+
+        &-shadow {
+            background: @color-blue-100;
+            //filter: drop-shadow(-20px 0 8px rgba(0, 0, 0, 0.2));
+        }
+    }
+
+    @media only screen and (min-width: @screen-sm-min) {
+        &--blue-right-slanted {
+            clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+            margin-top: -@right-slanted-offset;
+            // light blue bg below right column to fill right half of the zone
+            &-bg {
+                background-color: @color-blue-100;
+                display: block;
+                height: ~"calc(100% + @{right-slanted-offset})";
+                position: absolute;
+                right: 0px;
+                top: -@right-slanted-offset;
+                width: 30%;
+            }
+
+            &-shadow {
+                background: none;
+                //filter: drop-shadow(-20px 80px 8px rgba(0, 0, 0, 0.2));
+            }
+
+            .shadow {
+                position: absolute;
+                z-index: -1;
+                content: "";
+                background: rgba(0, 0, 0, .5);
+                width: 200px;
+                height: 200px;
+                left: 5px;
+                top: 5px;
+                clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+            }
+        }
+    }
+    // Iphone X landscape
+    @media screen and (min-width: @screen-xs-min) and (max-height: 375px) {
+        &--blue-right-slanted {
+            margin-top: -@right-slanted-offset-landscape-IX;
+        }
+    }
+}
+
+.zone {
+    position: relative;
+
+    &--dark {
+        background-color: @color-pitch-black;
+        border-bottom: 8px solid @color-gray-600;
+        border-top: 8px solid @color-gray-600;
+        color: @type-color-light;
+        min-height: 300px;
+        position: relative;
+    }
+
+    &--light {
+        background-color: @color-white;
+        color: @type-color-base;
+    }
+}

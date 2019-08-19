@@ -1,0 +1,79 @@
+// Flex grid generation
+//
+// Based on Bootstrap settings
+
+.make-flex-row(@gutter: @grid-gutter-width) {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: (@gutter / -2);
+    margin-right: (@gutter / -2);
+}
+
+.make-flex-grid-columns(@class: '') {
+    // Common styles for all sizes of grid columns, widths 1-12
+    .flex-col(@index) { // initial
+        @item: ~".flex-col-xxs-@{index}, .flex-col-xs-@{index}, .flex-col-sm-@{index}, .flex-col-md-@{index}, .flex-col-lg-@{index}";
+        .flex-col((@index + 1), @item);
+    }
+
+    .flex-col(@index, @list) when (@index =< @grid-columns) { // general; "=<" isn't a typo
+        @item: ~".flex-col-xxs-@{index}, .flex-col-xs-@{index}, .flex-col-sm-@{index}, .flex-col-md-@{index}, .flex-col-lg-@{index}";
+        .flex-col((@index + 1), ~"@{list}, @{item}");
+    }
+
+    .flex-col(@index, @list) when (@index > @grid-columns) { // terminal
+        @{list} {
+            // Inner gutter via padding
+            & when (@class = xxs) {
+                padding-left: (@grid-gutter-width / 2);
+                padding-right: (@grid-gutter-width / 2);
+            }
+
+            & when (@class = xs) {
+                padding-left: (@grid-gutter-width / 2);
+                padding-right: (@grid-gutter-width / 2);
+            }
+
+            & when (@class = sm) {
+                padding-left: (@grid-gutter-width-sm / 2);
+                padding-right: (@grid-gutter-width-sm / 2);
+            }
+
+            & when (@class = md) {
+                padding-left: (@grid-gutter-width-md / 2);
+                padding-right: (@grid-gutter-width-md / 2);
+            }
+
+            & when (@class = lg) {
+                padding-left: (@grid-gutter-width / 2);
+                padding-right: (@grid-gutter-width / 2);
+            }
+            // Default column width
+            & when (@class = '') {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+            }
+        }
+    }
+
+    .flex-col(1); // kickstart it
+}
+
+.calc-flex-grid-column(@index, @class, @type) when (@type = width) and (@index > 0) {
+    .flex-col-@{class}-@{index} {
+        width: percentage((@index / @grid-columns));
+    }
+}
+
+// Basic looping in LESS
+.loop-flex-grid-columns(@index, @class, @type) when (@index >= 0) {
+    .calc-flex-grid-column(@index, @class, @type);
+    // next iteration
+    .loop-flex-grid-columns((@index - 1), @class, @type);
+}
+
+// Create grid for specific class
+.make-flex-grid(@class) {
+    .loop-flex-grid-columns(@grid-columns, @class, width);
+}
